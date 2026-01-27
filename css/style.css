@@ -1787,7 +1787,7 @@ body.modal{
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	background-image: url(..//img/portfolio/ss-1.png);
+	background-image: url(..//img/portfolio/zainab-img.jpg);
 }
 .grax_tm_hero .ripple:before{
 	position: absolute;
@@ -3135,7 +3135,9 @@ body.dark .grax_tm_settings .cursor li .svg,
 
 
 
-
+.seo-card{
+	margin-top: -40px;
+}
 
 
 
