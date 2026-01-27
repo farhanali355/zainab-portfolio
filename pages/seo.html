@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SEO Services | Soheera Sibghat</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../page-css/seo-services.css">
+</head>
+
+<body class="theme-light">
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <h2 class="brand">SEO <span>Services</span></h2>
+            </div>
+
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <a href="../index.html" class="home-btn">
+                    <i class="fas fa-home"></i> Home
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Professional <span>SEO Services</span></h1>
+                <p class="hero-subtitle">Boost your online visibility with our comprehensive SEO solutions</p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">250+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Satisfaction</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY NAVIGATION -->
+    <section class="category-section">
+        <div class="container">
+            <div class="category-header">
+                <h2>Choose <span>Service</span> Category</h2>
+                <p>Select a category to view details</p>
+            </div>
+            
+            <div class="category-selector">
+                <div class="category-dropdown">
+                    <button class="dropdown-btn" id="dropdownBtn">
+                        <span id="selectedCategory">Local SEO</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <button class="menu-item" data-category="local">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Local SEO</span>
+                        </button>
+                        <button class="menu-item" data-category="technical">
+                            <i class="fas fa-cogs"></i>
+                            <span>Technical SEO</span>
+                        </button>
+                        <button class="menu-item" data-category="enterprise">
+                            <i class="fas fa-building"></i>
+                            <span>Enterprise SEO</span>
+                        </button>
+                        <button class="menu-item" data-category="ecommerce">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>E-commerce SEO</span>
+                        </button>
+                        <button class="menu-item" data-category="youtube">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube SEO</span>
+                        </button>
+                        <button class="menu-item" data-category="ai">
+                            <i class="fas fa-robot"></i>
+                            <span>AI & LLM SEO</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE CONTENT -->
+    <section class="service-section">
+        <div class="container">
+            <div class="service-content" id="local">
+                <div class="service-image">
+                    <img src="../images/seo/local.jpg" alt="Local SEO">
+                </div>
+                <div class="service-text">
+                    <h2>Local SEO</h2>
+                    <p>Dominate local search results and attract customers in your geographic area. Our local SEO services include Google My Business optimization, local citations, review management, and location-specific keyword targeting to ensure your business appears when potential customers search for services in your area.</p>
+                </div>
+            </div>
+
+            <div class="service-content hidden" id="technical">
+                <div class="service-image">
+                    <img src="../images/seo/technical.webp" alt="Technical SEO">
+                </div>
+                <div class="service-text">
+                    <h2>Technical SEO</h2>
+                    <p>Optimize your website's technical infrastructure for better search engine crawling and indexing. We focus on site speed optimization, mobile-first indexing, website architecture, schema markup implementation, and fixing technical issues that prevent search engines from properly indexing your content.</p>
+                </div>
+            </div>
+
+            <div class="service-content hidden" id="enterprise">
+                <div class="service-image">
+                    <img src="../images/seo/enter.jpeg" alt="Enterprise SEO">
+                </div>
+                <div class="service-text">
+                    <h2>Enterprise SEO</h2>
+                    <p>Scalable SEO strategies for large organizations with complex website structures. Our enterprise SEO services include comprehensive competitor analysis, international SEO strategies, team training, performance monitoring, and workflow optimization to ensure your large-scale website ranks well across all target markets.</p>
+                </div>
+            </div>
+
+            <div class="service-content hidden" id="ecommerce">
+                <div class="service-image">
+                    <img src="../images/seo/e-commerce.jpg" alt="E-commerce SEO">
+                </div>
+                <div class="service-text">
+                    <h2>E-commerce SEO</h2>
+                    <p>Drive qualified traffic to your online store and increase sales through strategic e-commerce SEO. We optimize product pages, category structures, shopping feeds, and implement conversion-focused strategies to ensure your products appear in relevant search results and attract ready-to-buy customers.</p>
+                </div>
+            </div>
+
+            <div class="service-content hidden" id="youtube">
+                <div class="service-image">
+                    <img src="../images/seo/youtube.webp" alt="YouTube SEO">
+                </div>
+                <div class="service-text">
+                    <h2>YouTube SEO</h2>
+                    <p>Optimize your video content for YouTube search and maximize your channel's visibility. Our YouTube SEO services include keyword research for videos, thumbnail design, video description optimization, audience engagement strategies, and analytics tracking to help your videos rank higher and attract more views.</p>
+                </div>
+            </div>
+
+            <div class="service-content hidden" id="ai">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="AI & LLM SEO">
+                </div>
+                <div class="service-text">
+                    <h2>AI & LLM SEO</h2>
+                    <p>Leverage artificial intelligence and large language models for advanced SEO strategies. Our AI-powered SEO services include content optimization using machine learning, trend prediction analysis, automated SEO audits, and competitor intelligence gathering to give you a competitive edge in search rankings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+              
+           <!-- COPYRIGHT -->
+		<div class="grax_tm_section">
+			<div class="grax_tm_copyright">
+				
+				
+				<div class="container">
+					<!-- Original Content - Layout Changed -->
+					<div class="copyright_inner">
+						<!-- Left: Logo -->
+						<div class="logo wow fadeInLeft" data-wow-duration="1s">
+							<span class="footer-logo">Zainab</span>
+						</div>
+						
+						<!-- Center: Navigation Menu -->
+						<div class="footer-nav-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+							<ul class="footer-nav-menu">
+								<li style="--i:#e54b4b;--j:#ff7b7b" class="footer-nav-item">
+									<a href="../index.html" class="footer-nav-link">
+										<span class="icon">
+											<ion-icon name="home-outline"></ion-icon>
+										</span>
+										<span class="title">Home</span>
+									</a>
+								</li>
+								<li style="--i:#56CCF2;--j:#2F80ED" class="footer-nav-item">
+									<a href="../index.html#about" class="footer-nav-link">
+										<span class="icon">
+											<ion-icon name="person-outline"></ion-icon>
+										</span>
+										<span class="title">About</span>
+									</a>
+								</li>
+								<li style="--i:#FF9966;--j:#FF5E62" class="footer-nav-item">
+									<a href="../index.html#portfolio" class="footer-nav-link">
+										<span class="icon">
+											<ion-icon name="briefcase-outline"></ion-icon>
+										</span>
+										<span class="title">Portfolio</span>
+									</a>
+								</li>
+								<li style="--i:#80FF72;--j:#7EE8FA" class="footer-nav-item">
+									<a href="../index.html#contact" class="footer-nav-link">
+										<span class="icon">
+											<ion-icon name="mail-outline"></ion-icon>
+										</span>
+										<span class="title">Contact</span>
+									</a>
+								</li>
+							
+							</ul>
+						</div>
+						
+						<!-- Right: Copyright Text -->
+						<div class="copy wow fadeInRight" data-wow-duration="1s" data-wow-delay=".4s">
+							<p>&copy; Copyright 2026 by Soheera</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+                
+               
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Zainab Samnan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="../js/seo-script.js"></script>
+</body>
+</html>
