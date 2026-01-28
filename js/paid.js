@@ -1,7 +1,7 @@
-// SEO Services JavaScript - Complete Functionality
+// Paid Marketing JavaScript - Complete Functionality
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('SEO Services Page Loaded');
+    console.log('Paid Marketing Page Loaded');
     
     // 1. Set Current Year in Footer
     const currentYearElement = document.getElementById('currentYear');
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // 3. SEO Tools Modal Functionality
+    // 3. Paid Marketing Tools Modal Functionality
     const toolsBtn = document.getElementById('toolsBtn');
     const modalOverlay = document.getElementById('modalOverlay');
     const modalClose = document.getElementById('modalClose');
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if(toolsBtn) {
         toolsBtn.addEventListener('click', function() {
             modalOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.body.style.overflow = 'hidden';
         });
     }
     
@@ -197,8 +197,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add error handling
         img.addEventListener('error', function() {
             console.log('Image failed to load:', this.src);
-            const serviceName = this.alt || 'SEO Service';
-            this.src = `https://via.placeholder.com/1200x400/2563eb/ffffff?text=${encodeURIComponent(serviceName)}`;
+            const serviceName = this.alt || 'Paid Marketing';
+            this.src = `https://via.placeholder.com/1200x400/8B5CF6/ffffff?text=${encodeURIComponent(serviceName)}`;
         });
         
         // Smooth loading effect
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // 9. Initialize first service as active
-    switchService('local');
+    switchService('ppc');
     
     // 10. Add hover effects to service images
     const serviceImages = document.querySelectorAll('.service-image');
@@ -245,5 +245,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }, index * 100);
     });
     
-    console.log('SEO Services functionality initialized successfully');
+    console.log('Paid Marketing functionality initialized successfully');
 });

@@ -1,4 +1,4 @@
-// Digital Marketing JavaScript - Updated for 6 services
+// Digital Marketing JavaScript - Complete Functionality
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Digital Marketing Page Loaded');
@@ -32,7 +32,46 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // 3. Dropdown Functionality
+    // 3. Digital Marketing Tools Modal Functionality
+    const toolsBtn = document.getElementById('toolsBtn');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalClose = document.getElementById('modalClose');
+    
+    // Open modal
+    if(toolsBtn) {
+        toolsBtn.addEventListener('click', function() {
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    
+    // Close modal
+    if(modalClose) {
+        modalClose.addEventListener('click', function() {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    }
+    
+    // Close modal when clicking outside
+    if(modalOverlay) {
+        modalOverlay.addEventListener('click', function(e) {
+            if(e.target === modalOverlay) {
+                modalOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if(e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+    
+    // 4. Dropdown Functionality
     const dropdownBtn = document.getElementById('dropdownBtn');
     const dropdownMenu = document.getElementById('dropdownMenu');
     const selectedCategory = document.getElementById('selectedCategory');
@@ -58,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // 4. Service Switching Function
+    // 5. Service Switching Function
     function switchService(category) {
         console.log('Switching to:', category);
         
@@ -106,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300);
     }
     
-    // 5. Menu Item Click Events
+    // 6. Menu Item Click Events
     menuItems.forEach(item => {
         item.addEventListener('click', function() {
             const category = this.dataset.category;
@@ -114,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // 6. Stats Counter Animation
+    // 7. Stats Counter Animation
     function animateStats() {
         const stats = document.querySelectorAll('.stat-number');
         stats.forEach(stat => {
@@ -152,14 +191,14 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(heroSection);
     }
     
-    // 7. Image Loading with Fallback
+    // 8. Image Loading with Fallback
     const images = document.querySelectorAll('.service-image img');
     images.forEach(img => {
         // Add error handling
         img.addEventListener('error', function() {
             console.log('Image failed to load:', this.src);
             const serviceName = this.alt || 'Digital Marketing';
-            this.src = `https://via.placeholder.com/1200x400/2563eb/ffffff?text=${encodeURIComponent(serviceName)}`;
+            this.src = `https://via.placeholder.com/1200x400/10B981/ffffff?text=${encodeURIComponent(serviceName)}`;
         });
         
         // Smooth loading effect
@@ -175,10 +214,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // 8. Initialize first service as active
+    // 9. Initialize first service as active
     switchService('smm');
     
-    // 9. Add hover effects to service images
+    // 10. Add hover effects to service images
     const serviceImages = document.querySelectorAll('.service-image');
     serviceImages.forEach(container => {
         const img = container.querySelector('img');
@@ -191,6 +230,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 img.style.transform = 'scale(1)';
             });
         }
+    });
+    
+    // 11. Tool Card Animation
+    const toolCards = document.querySelectorAll('.tool-card');
+    toolCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.5s ease';
+        
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, index * 100);
     });
     
     console.log('Digital Marketing functionality initialized successfully');

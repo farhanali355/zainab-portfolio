@@ -27,6 +27,11 @@
             </div>
 
             <div class="nav-right">
+                <!-- SEO Tools Button -->
+                <button class="tools-btn" id="toolsBtn">
+                    <i class="fas fa-tools"></i> SEO Tools
+                </button>
+                
                 <button class="theme-toggle" id="themeToggle">
                     <i class="fas fa-moon" id="themeIcon"></i>
                 </button>
@@ -111,7 +116,7 @@
     <!-- SERVICE CONTENT -->
     <section class="service-section">
         <div class="container">
-            <div class="service-content" id="local">
+            <div class="service-content active" id="local">
                 <div class="service-image">
                     <img src="/images/seo/local.jpg" alt="Local SEO">
                 </div>
@@ -173,77 +178,212 @@
         </div>
     </section>
 
+    <!-- SEO TOOLS MODAL -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2><i class="fas fa-tools"></i> SEO Tools We Use</h2>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-content">
+                <div class="tools-category">
+                    <h3><i class="fas fa-search"></i> Keyword Research</h3>
+                    <div class="tools-grid">
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fab fa-google"></i>
+                            </div>
+                            <h4>Google Keyword Planner</h4>
+                            <p>Keyword ideas and search volume data</p>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Ahrefs</h4>
+                            <p>Competitor analysis & keyword research</p>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-magnifying-glass-chart"></i>
+                            </div>
+                            <h4>SEMrush</h4>
+                            <p>Complete SEO toolkit</p>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h4>AnswerThePublic</h4>
+                            <p>Content ideas from questions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tools-category">
+                    <h3><i class="fas fa-cogs"></i> Technical SEO</h3>
+                    <div class="tools-grid">
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h4>Google Search Console</h4>
+                            <p>Monitor website performance</p>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <h4>PageSpeed Insights</h4>
+                            <p>Website speed optimization</p>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-sitemap"></i>
+                            </div>
+                            <h4>Screaming Frog</h4>
+                            <p>Website crawling & audit</p>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>SSL Checker</h4>
+                            <p>SSL certificate validation</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tools-category">
+                    <h3><i class="fas fa-chart-bar"></i> Analytics & Tracking</h3>
+                    <div class="tools-grid">
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fab fa-google"></i>
+                            </div>
+                            <h4>Google Analytics</h4>
+                            <p>Traffic & user behavior analysis</p>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <h4>Google Data Studio</h4>
+                            <p>Custom reporting dashboards</p>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-mouse-pointer"></i>
+                            </div>
+                            <h4>Hotjar</h4>
+                            <p>User behavior & heatmaps</p>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-ranking-star"></i>
+                            </div>
+                            <h4>Rank Tracking</h4>
+                            <p>Keyword position monitoring</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tools-category">
+                    <h3><i class="fas fa-file-alt"></i> Content & On-Page</h3>
+                    <div class="tools-grid">
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-spell-check"></i>
+                            </div>
+                            <h4>Grammarly</h4>
+                            <p>Content quality check</p>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h4>Yoast SEO</h4>
+                            <p>On-page optimization</p>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <h4>Link Checker</h4>
+                            <p>Broken link detection</p>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <h4>Copyscape</h4>
+                            <p>Plagiarism checker</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <p>We use these industry-standard tools to deliver the best SEO results for our clients.</p>
+            </div>
+        </div>
+    </div>
+
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-              
-           <!-- COPYRIGHT -->
-		<div class="grax_tm_section">
-			<div class="grax_tm_copyright">
-				
-				
-				<div class="container">
-					<!-- Original Content - Layout Changed -->
-					<div class="copyright_inner">
-						<!-- Left: Logo -->
-						<div class="logo wow fadeInLeft" data-wow-duration="1s">
-							<span class="footer-logo">Zainab</span>
-						</div>
-						
-						<!-- Center: Navigation Menu -->
-						<div class="footer-nav-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
-							<ul class="footer-nav-menu">
-								<li style="--i:#e54b4b;--j:#ff7b7b" class="footer-nav-item">
-									<a href="../index.html" class="footer-nav-link">
-										<span class="icon">
-											<ion-icon name="home-outline"></ion-icon>
-										</span>
-										<span class="title">Home</span>
-									</a>
-								</li>
-								<li style="--i:#56CCF2;--j:#2F80ED" class="footer-nav-item">
-									<a href="../index.html#about" class="footer-nav-link">
-										<span class="icon">
-											<ion-icon name="person-outline"></ion-icon>
-										</span>
-										<span class="title">About</span>
-									</a>
-								</li>
-								<li style="--i:#FF9966;--j:#FF5E62" class="footer-nav-item">
-									<a href="../index.html#portfolio" class="footer-nav-link">
-										<span class="icon">
-											<ion-icon name="briefcase-outline"></ion-icon>
-										</span>
-										<span class="title">Portfolio</span>
-									</a>
-								</li>
-								<li style="--i:#80FF72;--j:#7EE8FA" class="footer-nav-item">
-									<a href="../index.html#contact" class="footer-nav-link">
-										<span class="icon">
-											<ion-icon name="mail-outline"></ion-icon>
-										</span>
-										<span class="title">Contact</span>
-									</a>
-								</li>
-							
-							</ul>
-						</div>
-						
-						<!-- Right: Copyright Text -->
-						<div class="copy wow fadeInRight" data-wow-duration="1s" data-wow-delay=".4s">
-							<p>&copy; Copyright 2026 by Soheera</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+            <!-- COPYRIGHT SECTION -->
+            <div class="copyright_inner">
+                <!-- Left: Logo -->
+                <div class="logo">
+                    <span class="footer-logo">Soheera</span>
+                </div>
                 
-               
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> Zainab Samnan. All rights reserved.</p>
+                <!-- Center: Navigation Menu -->
+                <div class="footer-nav-center">
+                    <ul class="footer-nav-menu">
+                        <li style="--i:#e54b4b;--j:#ff7b7b" class="footer-nav-item">
+                            <a href="../index.html" class="footer-nav-link">
+                                <span class="icon">
+                                    <ion-icon name="home-outline"></ion-icon>
+                                </span>
+                                <span class="title">Home</span>
+                            </a>
+                        </li>
+                        <li style="--i:#56CCF2;--j:#2F80ED" class="footer-nav-item">
+                            <a href="../index.html#about" class="footer-nav-link">
+                                <span class="icon">
+                                    <ion-icon name="person-outline"></ion-icon>
+                                </span>
+                                <span class="title">About</span>
+                            </a>
+                        </li>
+                        <li style="--i:#FF9966;--j:#FF5E62" class="footer-nav-item">
+                            <a href="../index.html#portfolio" class="footer-nav-link">
+                                <span class="icon">
+                                    <ion-icon name="briefcase-outline"></ion-icon>
+                                </span>
+                                <span class="title">Portfolio</span>
+                            </a>
+                        </li>
+                        <li style="--i:#80FF72;--j:#7EE8FA" class="footer-nav-item">
+                            <a href="../index.html#contact" class="footer-nav-link">
+                                <span class="icon">
+                                    <ion-icon name="mail-outline"></ion-icon>
+                                </span>
+                                <span class="title">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Right: Copyright Text -->
+                <div class="copy">
+                    <p>&copy; Copyright 2026 by Soheera</p>
+                </div>
             </div>
         </div>
     </footer>
