@@ -1,396 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>SEO Services | Soheera Sibghat</title>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Mastery | Professional SEO Services</title>
     <link rel="stylesheet" href="../page-css/seo-services.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
 </head>
-
-<body class="theme-light">
-
-    <!-- NAVBAR -->
+<body>
+    <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-left">
-                <h2 class="brand">SEO <span>Services</span></h2>
-            </div>
-
-            <div class="nav-right">
-                <!-- SEO Tools Button -->
-                <button class="tools-btn" id="toolsBtn">
-                    <i class="fas fa-tools"></i> SEO Tools
-                </button>
-                
-                <button class="theme-toggle" id="themeToggle">
-                    <i class="fas fa-moon" id="themeIcon"></i>
-                </button>
-                <a href="../index.html" class="home-btn">
-                    <i class="fas fa-home"></i> Home
+        <div class="container">
+            <div class="nav-content">
+                <!-- Logo on Left -->
+                <a href="#" class="logo">
+                    <span class="logo-text">SEO</span>
+                    <span class="logo-dot"></span>
                 </a>
+                
+              
+                
+                <!-- Right Side Icons -->
+                <div class="nav-right">
+                    <button class="nav-icon theme-toggle" id="themeToggle" title="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                        <span class="tooltip">Dark/Light Mode</span>
+                    </button>
+                    <button class="nav-icon tools-btn" id="toolsBtn" title="Our SEO Tools">
+                        <i class="fas fa-tools"></i>
+                        <span class="tooltip">Our Tools</span>
+                    </button>
+                    <a href="../index.html" class="cta-btn">
+                        <span>Home</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <button class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="hero-section">
-        <div class="hero-bg"></div>
-        <div class="hero-container">
+    <!-- Hero Section with Animated Text -->
+    <section class="hero">
+        <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Professional <span>SEO Services</span></h1>
-                <p class="hero-subtitle">Boost your online visibility with our comprehensive SEO solutions</p>
+                <div class="hero-tag">Premium SEO Services</div>
+                <h1 class="hero-title">Transform Your <span class="highlight typed-text"></span></h1>
+                <p class="hero-desc">Professional search engine optimization services designed to increase visibility, drive traffic, and accelerate business growth.</p>
                 
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">250+</span>
-                        <span class="stat-label">Projects</span>
+                <!-- Animated Stats -->
+                <div class="animated-stats">
+                    <div class="stat-box">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number" data-count="250">0</span>
+                            <span class="stat-text">Projects Completed</span>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">98%</span>
-                        <span class="stat-label">Satisfaction</span>
+                    <div class="stat-box">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number" data-count="98">0</span><span>%</span>
+                            <span class="stat-text">Client Satisfaction</span>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">24/7</span>
-                        <span class="stat-label">Support</span>
+                    <div class="stat-box">
+                        <div class="stat-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number" data-count="5">0</span><span>+ Years</span>
+                            <span class="stat-text">Industry Experience</span>
+                        </div>
                     </div>
                 </div>
+                
+             
             </div>
+        </div>
+        
+        <!-- Animated Background Elements -->
+        <div class="hero-background">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+            <div class="grid-dots"></div>
         </div>
     </section>
 
-    <!-- CATEGORY NAVIGATION -->
-    <section class="category-section">
+    <!-- Services Section -->
+    <section class="services" id="services">
         <div class="container">
-            <div class="category-header">
-                <h2>Choose <span>Service</span> Category</h2>
-                <p>Select a category to view details</p>
+            <div class="section-header">
+                <div class="section-tag">Our Expertise</div>
+                <h2 class="section-title">Professional SEO Services</h2>
+                <p class="section-subtitle">Comprehensive solutions tailored to your business goals</p>
             </div>
-            
-            <div class="category-selector">
-                <div class="category-dropdown">
-                    <button class="dropdown-btn" id="dropdownBtn">
-                        <span id="selectedCategory">Local SEO</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="dropdown-menu" id="dropdownMenu">
-                        <button class="menu-item" data-category="local">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Local SEO</span>
-                        </button>
-                        <button class="menu-item" data-category="technical">
-                            <i class="fas fa-cogs"></i>
-                            <span>Technical SEO</span>
-                        </button>
-                        <button class="menu-item" data-category="enterprise">
-                            <i class="fas fa-building"></i>
-                            <span>Enterprise SEO</span>
-                        </button>
-                        <button class="menu-item" data-category="ecommerce">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span>E-commerce SEO</span>
-                        </button>
-                        <button class="menu-item" data-category="youtube">
-                            <i class="fab fa-youtube"></i>
-                            <span>YouTube SEO</span>
-                        </button>
-                        <button class="menu-item" data-category="ai">
-                            <i class="fas fa-robot"></i>
-                            <span>AI & LLM SEO</span>
-                        </button>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card" data-service="local-seo">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Local SEO">
+                        <div class="service-overlay">
+                            <span class="view-details">View Details</span>
+                        </div>
                     </div>
+                  
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card" data-service="technical-seo">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Technical SEO">
+                        <div class="service-overlay">
+                            <span class="view-details">View Details </span>
+                        </div>
+                    </div>
+                 
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card" data-service="ecommerce-seo">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="E-commerce SEO">
+                        <div class="service-overlay">
+                            <span class="view-details">View Details </span>
+                        </div>
+                    </div>
+                  
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card" data-service="content-strategy">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Content Strategy">
+                        <div class="service-overlay">
+                            <span class="view-details">View Details </span>
+                        </div>
+                    </div>
+                   
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card" data-service="youtube-seo">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1611605698323-b1e99cfd37ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="YouTube SEO">
+                        <div class="service-overlay">
+                            <span class="view-details">View Details </span>
+                        </div>
+                    </div>
+                 
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card" data-service="ai-seo">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="AI-Powered SEO">
+                        <div class="service-overlay">
+                            <span class="view-details">View Details </span>
+                        </div>
+                    </div>
+                
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SERVICE CONTENT -->
-    <section class="service-section">
+    <!-- Results Section -->
+    <section class="results" id="results">
         <div class="container">
-            <div class="service-content active" id="local">
-                <div class="service-image">
-                    <img src="/images/seo/local.jpg" alt="Local SEO">
-                </div>
-                <div class="service-text">
-                    <h2>Local SEO</h2>
-                    <p>Dominate local search results and attract customers in your geographic area. Our local SEO services include Google My Business optimization, local citations, review management, and location-specific keyword targeting to ensure your business appears when potential customers search for services in your area.</p>
-                </div>
+            <div class="section-header">
+                <div class="section-tag">Proven Results</div>
+                <h2 class="section-title">Our Success Stories</h2>
+                <p class="section-subtitle">Real results from businesses we've helped grow</p>
             </div>
 
-            <div class="service-content hidden" id="technical">
-                <div class="service-image">
-                    <img src="/images/seo/technical.webp" alt="Technical SEO">
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="result-number" data-count="350">0</div>
+                    <h3 class="result-title">Traffic Increase</h3>
+                    <p class="result-desc">For fashion e-commerce brand in 6 months</p>
                 </div>
-                <div class="service-text">
-                    <h2>Technical SEO</h2>
-                    <p>Optimize your website's technical infrastructure for better search engine crawling and indexing. We focus on site speed optimization, mobile-first indexing, website architecture, schema markup implementation, and fixing technical issues that prevent search engines from properly indexing your content.</p>
-                </div>
-            </div>
 
-            <div class="service-content hidden" id="enterprise">
-                <div class="service-image">
-                    <img src="/images/seo/enter.jpeg" alt="Enterprise SEO">
+                <div class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="result-number">#1</div>
+                    <h3 class="result-title">Top Rankings</h3>
+                    <p class="result-desc">For 15+ high-value SaaS keywords</p>
                 </div>
-                <div class="service-text">
-                    <h2>Enterprise SEO</h2>
-                    <p>Scalable SEO strategies for large organizations with complex website structures. Our enterprise SEO services include comprehensive competitor analysis, international SEO strategies, team training, performance monitoring, and workflow optimization to ensure your large-scale website ranks well across all target markets.</p>
-                </div>
-            </div>
 
-            <div class="service-content hidden" id="ecommerce">
-                <div class="service-image">
-                    <img src="/images/seo/e-commerce.jpg" alt="E-commerce SEO">
+                <div class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="result-number" data-count="180">0</div>
+                    <h3 class="result-title">Lead Growth</h3>
+                    <p class="result-desc">For B2B service company in 4 months</p>
                 </div>
-                <div class="service-text">
-                    <h2>E-commerce SEO</h2>
-                    <p>Drive qualified traffic to your online store and increase sales through strategic e-commerce SEO. We optimize product pages, category structures, shopping feeds, and implement conversion-focused strategies to ensure your products appear in relevant search results and attract ready-to-buy customers.</p>
-                </div>
-            </div>
 
-            <div class="service-content hidden" id="youtube">
-                <div class="service-image">
-                    <img src="/images/seo/youtube.webp" alt="YouTube SEO">
-                </div>
-                <div class="service-text">
-                    <h2>YouTube SEO</h2>
-                    <p>Optimize your video content for YouTube search and maximize your channel's visibility. Our YouTube SEO services include keyword research for videos, thumbnail design, video description optimization, audience engagement strategies, and analytics tracking to help your videos rank higher and attract more views.</p>
-                </div>
-            </div>
-
-            <div class="service-content hidden" id="ai">
-                <div class="service-image">
-                    <img src="/images/seo/llm.jpg" alt="AI & LLM SEO">
-                </div>
-                <div class="service-text">
-                    <h2>AI & LLM SEO</h2>
-                    <p>Leverage artificial intelligence and large language models for advanced SEO strategies. Our AI-powered SEO services include content optimization using machine learning, trend prediction analysis, automated SEO audits, and competitor intelligence gathering to give you a competitive edge in search rankings.</p>
+                <div class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="result-number" data-count="95">0</div>
+                    <h3 class="result-title">Client Retention</h3>
+                    <p class="result-desc">Long-term partnerships and growth</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SEO TOOLS MODAL -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal-container">
-            <div class="modal-header">
-                <h2><i class="fas fa-tools"></i> SEO Tools We Use</h2>
-                <button class="modal-close" id="modalClose">
-                    <i class="fas fa-times"></i>
-                </button>
+   
+   
+
+    <!-- Footer -->
+    <div class="grax_tm_section">
+        <div class="grax_tm_copyright">
+            <div class="my_wave">
+                <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <defs></defs>
+                    <path id="wave_img" data-color="#fff"
+                        d="M 0 185.609 C 317.16666666666663 118.136 317.16666666666663 118.136 634.3333333333333 151.87 C 951.4999999999999 185.609 951.4999999999999 185.609 1268.6666666666665 116.402 C 1585.833333333333 47.195 1585.833333333333 47.195 1903 131.925 L 1903 507 L 0 507 Z"
+                        fill="#fff"></path>
+                </svg>
             </div>
             
-            <div class="modal-content">
-                <div class="tools-category">
-                    <h3><i class="fas fa-search"></i> Keyword Research</h3>
-                    <div class="tools-grid">
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fab fa-google"></i>
-                            </div>
-                            <h4>Google Keyword Planner</h4>
-                            <p>Keyword ideas and search volume data</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <h4>Ahrefs</h4>
-                            <p>Competitor analysis & keyword research</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-magnifying-glass-chart"></i>
-                            </div>
-                            <h4>SEMrush</h4>
-                            <p>Complete SEO toolkit</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <h4>AnswerThePublic</h4>
-                            <p>Content ideas from questions</p>
-                        </div>
+            <div class="container">
+                <!-- Original Content - Layout Changed -->
+                <div class="copyright_inner">
+                    <!-- Left: Logo -->
+                    <div class="logo wow fadeInLeft" data-wow-duration="1s">
+                        <span class="footer-logo">Zainab Samnan</span>
+                    </div>
+                    
+                    <!-- Center: Navigation Menu -->
+                    <div class="footer-nav-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+                        <ul class="footer-nav-menu">
+                            <li style="--i:#e54b4b;--j:#ff7b7b" class="footer-nav-item">
+                                <a href="#home" class="footer-nav-link">
+                                    <span class="icon">
+                                        <ion-icon name="home-outline"></ion-icon>
+                                    </span>
+                                    <span class="title">Home</span>
+                                </a>
+                            </li>
+                            <li style="--i:#56CCF2;--j:#2F80ED" class="footer-nav-item">
+                                <a href="#about" class="footer-nav-link">
+                                    <span class="icon">
+                                        <ion-icon name="person-outline"></ion-icon>
+                                    </span>
+                                    <span class="title">About</span>
+                                </a>
+                            </li>
+                            <li style="--i:#FF9966;--j:#FF5E62" class="footer-nav-item">
+                                <a href="#portfolio" class="footer-nav-link">
+                                    <span class="icon">
+                                        <ion-icon name="briefcase-outline"></ion-icon>
+                                    </span>
+                                    <span class="title">Portfolio</span>
+                                </a>
+                            </li>
+                            <li style="--i:#80FF72;--j:#7EE8FA" class="footer-nav-item">
+                                <a href="#contact" class="footer-nav-link">
+                                    <span class="icon">
+                                        <ion-icon name="mail-outline"></ion-icon>
+                                    </span>
+                                    <span class="title">Contact</span>
+                                </a>
+                            </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    <!-- Right: Copyright Text -->
+                    <div class="copy wow fadeInRight" data-wow-duration="1s" data-wow-delay=".4s">
+                        <p>&copy; Copyright 2026 by Zainab Samnan</p>
                     </div>
                 </div>
-                
-                <div class="tools-category">
-                    <h3><i class="fas fa-cogs"></i> Technical SEO</h3>
-                    <div class="tools-grid">
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-search"></i>
-                            </div>
-                            <h4>Google Search Console</h4>
-                            <p>Monitor website performance</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-tachometer-alt"></i>
-                            </div>
-                            <h4>PageSpeed Insights</h4>
-                            <p>Website speed optimization</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-sitemap"></i>
-                            </div>
-                            <h4>Screaming Frog</h4>
-                            <p>Website crawling & audit</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <h4>SSL Checker</h4>
-                            <p>SSL certificate validation</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="tools-category">
-                    <h3><i class="fas fa-chart-bar"></i> Analytics & Tracking</h3>
-                    <div class="tools-grid">
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fab fa-google"></i>
-                            </div>
-                            <h4>Google Analytics</h4>
-                            <p>Traffic & user behavior analysis</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-chart-pie"></i>
-                            </div>
-                            <h4>Google Data Studio</h4>
-                            <p>Custom reporting dashboards</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-mouse-pointer"></i>
-                            </div>
-                            <h4>Hotjar</h4>
-                            <p>User behavior & heatmaps</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-ranking-star"></i>
-                            </div>
-                            <h4>Rank Tracking</h4>
-                            <p>Keyword position monitoring</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="tools-category">
-                    <h3><i class="fas fa-file-alt"></i> Content & On-Page</h3>
-                    <div class="tools-grid">
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-spell-check"></i>
-                            </div>
-                            <h4>Grammarly</h4>
-                            <p>Content quality check</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                            <h4>Yoast SEO</h4>
-                            <p>On-page optimization</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-link"></i>
-                            </div>
-                            <h4>Link Checker</h4>
-                            <p>Broken link detection</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-sync-alt"></i>
-                            </div>
-                            <h4>Copyscape</h4>
-                            <p>Plagiarism checker</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="modal-footer">
-                <p>We use these industry-standard tools to deliver the best SEO results for our clients.</p>
             </div>
         </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <!-- COPYRIGHT SECTION -->
-            <div class="copyright_inner">
-                <!-- Left: Logo -->
-                <div class="logo">
-                    <span class="footer-logo">Soheera</span>
+    <!-- Service Modal -->
+    <div class="service-modal" id="serviceModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-content">
+                <div class="modal-image">
+                    <img id="modalServiceImage" src="" alt="Service Image">
                 </div>
                 
-                <!-- Center: Navigation Menu -->
-                <div class="footer-nav-center">
-                    <ul class="footer-nav-menu">
-                        <li style="--i:#e54b4b;--j:#ff7b7b" class="footer-nav-item">
-                            <a href="../index.html" class="footer-nav-link">
-                                <span class="icon">
-                                    <ion-icon name="home-outline"></ion-icon>
-                                </span>
-                                <span class="title">Home</span>
-                            </a>
-                        </li>
-                        <li style="--i:#56CCF2;--j:#2F80ED" class="footer-nav-item">
-                            <a href="../index.html#about" class="footer-nav-link">
-                                <span class="icon">
-                                    <ion-icon name="person-outline"></ion-icon>
-                                </span>
-                                <span class="title">About</span>
-                            </a>
-                        </li>
-                        <li style="--i:#FF9966;--j:#FF5E62" class="footer-nav-item">
-                            <a href="../index.html#portfolio" class="footer-nav-link">
-                                <span class="icon">
-                                    <ion-icon name="briefcase-outline"></ion-icon>
-                                </span>
-                                <span class="title">Portfolio</span>
-                            </a>
-                        </li>
-                        <li style="--i:#80FF72;--j:#7EE8FA" class="footer-nav-item">
-                            <a href="../index.html#contact" class="footer-nav-link">
-                                <span class="icon">
-                                    <ion-icon name="mail-outline"></ion-icon>
-                                </span>
-                                <span class="title">Contact</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Right: Copyright Text -->
-                <div class="copy">
-                    <p>&copy; Copyright 2026 by Soheera</p>
+                <div class="modal-details">
+                    <div class="modal-header">
+                        <div class="modal-icon" id="modalServiceIcon">
+                            <i class="fas fa-search-location"></i>
+                        </div>
+                        <div class="modal-title">
+                            <span class="modal-tag" id="modalServiceTag">Local SEO</span>
+                            <h2 id="modalServiceTitle">Local SEO Service</h2>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <p id="modalServiceDesc">Comprehensive local SEO strategy to dominate your geographic market.</p>
+                        
+                        <div class="modal-features">
+                            <h3>What's Included</h3>
+                            <div class="features-grid" id="modalFeaturesList">
+                                <!-- Features will be dynamically added here -->
+                            </div>
+                        </div>
+                        
+                        <div class="modal-tags" id="modalServiceTags">
+                            <!-- Tags will be dynamically added here -->
+                        </div>
+                        
+                        
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
 
-    <!-- JavaScript -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Tools Modal -->
+    <div class="tools-modal" id="toolsModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <button class="modal-close" id="toolsModalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-header">
+                <div class="modal-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h2>Our SEO Tools</h2>
+                <p>Professional tools we use to deliver exceptional results</p>
+            </div>
+            
+            <div class="tools-grid" id="toolsGrid">
+                <!-- Tools will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+    
     <script src="../js/seo-script.js"></script>
 </body>
 </html>

@@ -1,249 +1,506 @@
-// SEO Services JavaScript - Complete Functionality
-
+// Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('SEO Services Page Loaded');
-    
-    // 1. Set Current Year in Footer
-    const currentYearElement = document.getElementById('currentYear');
-    if(currentYearElement) {
-        currentYearElement.textContent = new Date().getFullYear();
-    }
-    
-    // 2. Theme Toggle Function
+    // Theme Toggle
     const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = document.getElementById('themeIcon');
+    const themeIcon = themeToggle.querySelector('i');
     
-    function setTheme(theme) {
-        document.body.className = `theme-${theme}`;
-        themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-        localStorage.setItem('theme', theme);
+    // Check for saved theme preference or default to light
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
     }
     
-    // Check saved theme
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    setTheme(savedTheme);
-    
-    // Toggle theme on click
-    if(themeToggle) {
-        themeToggle.addEventListener('click', function() {
-            const currentTheme = document.body.classList.contains('theme-dark') ? 'dark' : 'light';
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            setTheme(newTheme);
-        });
-    }
-    
-    // 3. SEO Tools Modal Functionality
-    const toolsBtn = document.getElementById('toolsBtn');
-    const modalOverlay = document.getElementById('modalOverlay');
-    const modalClose = document.getElementById('modalClose');
-    
-    // Open modal
-    if(toolsBtn) {
-        toolsBtn.addEventListener('click', function() {
-            modalOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        });
-    }
-    
-    // Close modal
-    if(modalClose) {
-        modalClose.addEventListener('click', function() {
-            modalOverlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-    }
-    
-    // Close modal when clicking outside
-    if(modalOverlay) {
-        modalOverlay.addEventListener('click', function(e) {
-            if(e.target === modalOverlay) {
-                modalOverlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
-    }
-    
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(e) {
-        if(e.key === 'Escape' && modalOverlay.classList.contains('active')) {
-            modalOverlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
+    themeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+        
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        } else {
+            localStorage.setItem('theme', 'light');
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
         }
     });
     
-    // 4. Dropdown Functionality
-    const dropdownBtn = document.getElementById('dropdownBtn');
-    const dropdownMenu = document.getElementById('dropdownMenu');
-    const selectedCategory = document.getElementById('selectedCategory');
-    const menuItems = document.querySelectorAll('.menu-item');
-    const serviceContents = document.querySelectorAll('.service-content');
+    // Mobile Menu Toggle
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navLinks = document.querySelector('.nav-links');
     
-    // Toggle dropdown
-    if(dropdownBtn) {
-        dropdownBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            dropdownMenu.classList.toggle('active');
-            dropdownBtn.classList.toggle('active');
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            mobileToggle.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
         });
     }
     
-    // Close dropdown when clicking outside
+    // Close mobile menu when clicking outside
     document.addEventListener('click', function(e) {
-        if (dropdownBtn && dropdownMenu && 
-            !dropdownBtn.contains(e.target) && 
-            !dropdownMenu.contains(e.target)) {
-            dropdownMenu.classList.remove('active');
-            dropdownBtn.classList.remove('active');
+        if (!e.target.closest('.nav-links') && !e.target.closest('.mobile-toggle')) {
+            if (navLinks) navLinks.classList.remove('active');
+            if (mobileToggle) mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
         }
     });
     
-    // 5. Service Switching Function
-    function switchService(category) {
-        console.log('Switching to:', category);
+    // Active nav link on scroll
+    function setActiveNavLink() {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
         
-        // Hide all service contents
-        serviceContents.forEach(content => {
-            content.classList.remove('active');
-            content.classList.add('hidden');
-        });
+        let current = '';
         
-        // Show selected service
-        const targetService = document.getElementById(category);
-        if (targetService) {
-            targetService.classList.add('active');
-            targetService.classList.remove('hidden');
-        }
-        
-        // Update selected category text
-        const selectedItem = document.querySelector(`.menu-item[data-category="${category}"]`);
-        if (selectedItem && selectedCategory) {
-            const categoryName = selectedItem.querySelector('span').textContent;
-            selectedCategory.textContent = categoryName;
-        }
-        
-        // Update active state in menu
-        menuItems.forEach(item => {
-            item.classList.remove('active');
-            if (item.dataset.category === category) {
-                item.classList.add('active');
-            }
-        });
-        
-        // Close dropdown
-        if(dropdownMenu) dropdownMenu.classList.remove('active');
-        if(dropdownBtn) dropdownBtn.classList.remove('active');
-        
-        // Smooth scroll to service
-        setTimeout(() => {
-            const serviceSection = document.querySelector('.service-section');
-            if(serviceSection) {
-                serviceSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        }, 300);
-    }
-    
-    // 6. Menu Item Click Events
-    menuItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const category = this.dataset.category;
-            switchService(category);
-        });
-    });
-    
-    // 7. Stats Counter Animation
-    function animateStats() {
-        const stats = document.querySelectorAll('.stat-number');
-        stats.forEach(stat => {
-            const originalText = stat.textContent;
-            const target = parseInt(originalText.replace('+', '').replace('%', ''));
-            let count = 0;
-            const increment = target / 30;
-            const hasPlus = originalText.includes('+');
-            const hasPercent = originalText.includes('%');
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
             
-            const timer = setInterval(() => {
-                count += increment;
-                if (count >= target) {
-                    stat.textContent = target + (hasPercent ? '%' : (hasPlus ? '+' : ''));
-                    clearInterval(timer);
-                } else {
-                    stat.textContent = Math.floor(count) + (hasPercent ? '%' : (hasPlus ? '+' : ''));
-                }
-            }, 30);
+            if (window.scrollY >= (sectionTop - 150)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
         });
     }
     
-    // Trigger stats animation when hero section is visible
+    window.addEventListener('scroll', setActiveNavLink);
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                
+                // Close mobile menu
+                if (navLinks) {
+                    navLinks.classList.remove('active');
+                    mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+                
+                // Update URL hash
+                history.pushState(null, null, targetId);
+            }
+        });
+    });
+    
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll <= 0) {
+            navbar.style.boxShadow = 'var(--shadow-nav)';
+            navbar.style.transform = 'translate(-50%, 0)';
+            return;
+        }
+        
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            // Scrolling down - hide navbar
+            navbar.style.transform = 'translate(-50%, -100%)';
+        } else {
+            // Scrolling up - show navbar
+            navbar.style.transform = 'translate(-50%, 0)';
+            navbar.style.boxShadow = 'var(--shadow-nav)';
+        }
+        
+        lastScroll = currentScroll;
+    });
+    
+    // Typing animation for hero
+    const typedText = document.querySelector('.typed-text');
+    if (typedText) {
+        const texts = [
+            'Digital Presence',
+            'Search Rankings',
+            'Organic Traffic',
+            'Business Growth'
+        ];
+        
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        
+        function typeText() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typedText.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typedText.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                setTimeout(typeText, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                setTimeout(typeText, 500);
+            } else {
+                setTimeout(typeText, isDeleting ? 50 : 100);
+            }
+        }
+        
+        // Start typing animation after a delay
+        setTimeout(typeText, 1000);
+    }
+    
+    // Animated counter for stats
+    function animateCounter(element) {
+        const target = parseInt(element.getAttribute('data-count'));
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                element.textContent = target;
+                clearInterval(timer);
+            } else {
+                element.textContent = Math.floor(current);
+            }
+        }, 16);
+    }
+    
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                animateStats();
-                observer.unobserve(entry.target);
+                // Animate service cards
+                if (entry.target.classList.contains('service-card')) {
+                    entry.target.classList.add('visible');
+                }
+                
+                // Animate result cards
+                if (entry.target.classList.contains('result-card')) {
+                    entry.target.classList.add('visible');
+                    
+                    // Animate counters in result cards
+                    const counter = entry.target.querySelector('.result-number[data-count]');
+                    if (counter && !counter.hasAttribute('data-animated')) {
+                        counter.setAttribute('data-animated', 'true');
+                        animateCounter(counter);
+                    }
+                }
+                
+                // Animate stat counters in hero
+                if (entry.target.classList.contains('hero')) {
+                    const statCounters = document.querySelectorAll('.stat-number[data-count]');
+                    statCounters.forEach(counter => {
+                        if (!counter.hasAttribute('data-animated')) {
+                            counter.setAttribute('data-animated', 'true');
+                            animateCounter(counter);
+                        }
+                    });
+                }
             }
         });
-    }, { threshold: 0.5 });
+    }, observerOptions);
     
-    const heroSection = document.querySelector('.hero-section');
-    if (heroSection) {
-        observer.observe(heroSection);
+    // Observe elements
+    document.querySelectorAll('.service-card').forEach(card => observer.observe(card));
+    document.querySelectorAll('.result-card').forEach(card => observer.observe(card));
+    if (document.querySelector('.hero')) observer.observe(document.querySelector('.hero'));
+    
+    // Service data for modals
+    const servicesData = {
+        'local-seo': {
+            title: 'Local SEO',
+            tag: 'Local Optimization',
+            desc: 'Dominate local search results with optimized Google Business profiles, local citations, and location-based strategies that drive customers to your physical locations.',
+            image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            icon: 'fas fa-search-location',
+            tags: ['Google My Business', 'Local Citations', 'Review Management', 'NAP Consistency', 'Local Keywords'],
+            features: [
+                'Google My Business optimization',
+                'Local citation building and cleanup',
+                'Review generation and management',
+                'Local keyword research and targeting',
+                'Location page optimization',
+                'Local link building strategy'
+            ]
+        },
+        'technical-seo': {
+            title: 'Technical SEO',
+            tag: 'Technical Optimization',
+            desc: 'Optimize website infrastructure for better crawling, indexing, and overall technical health. Improve site speed, mobile responsiveness, and technical foundation.',
+            image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            icon: 'fas fa-cogs',
+            tags: ['Site Speed', 'Mobile Optimization', 'Structured Data', 'Crawlability', 'Indexing'],
+            features: [
+                'Website speed optimization',
+                'Mobile-first optimization',
+                'Schema markup implementation',
+                'XML sitemap optimization',
+                'Robots.txt configuration',
+                'Canonical URL implementation'
+            ]
+        },
+        'ecommerce-seo': {
+            title: 'E-commerce SEO',
+            tag: 'Online Store Optimization',
+            desc: 'Drive qualified traffic to your online store and increase sales through strategic product page optimization, category structure improvements, and conversion optimization.',
+            image: 'https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            icon: 'fas fa-shopping-cart',
+            tags: ['Product SEO', 'Category Pages', 'Conversion Rate', 'Shopify', 'WooCommerce'],
+            features: [
+                'Product page SEO optimization',
+                'Category page structure',
+                'E-commerce site architecture',
+                'Product schema implementation',
+                'Image optimization for products',
+                'Checkout process optimization'
+            ]
+        },
+        'content-strategy': {
+            title: 'Content Strategy',
+            tag: 'Content Marketing',
+            desc: 'Create and optimize content that ranks, engages, and converts your target audience through comprehensive keyword research, content planning, and optimization.',
+            image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            icon: 'fas fa-chart-line',
+            tags: ['Keyword Research', 'Content Creation', 'On-Page SEO', 'Blog Strategy', 'Content Planning'],
+            features: [
+                'Keyword research and strategy',
+                'Content calendar development',
+                'On-page SEO optimization',
+                'Content gap analysis',
+                'Competitor content analysis',
+                'Content performance tracking'
+            ]
+        },
+        'youtube-seo': {
+            title: 'YouTube SEO',
+            tag: 'Video Optimization',
+            desc: 'Maximize video visibility and grow your channel through optimized video titles, descriptions, tags, and comprehensive content strategy for YouTube.',
+            image: 'https://images.unsplash.com/photo-1611605698323-b1e99cfd37ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            icon: 'fab fa-youtube',
+            tags: ['Video Optimization', 'Channel Growth', 'Content Planning', 'YouTube Analytics', 'Thumbnail Design'],
+            features: [
+                'YouTube channel optimization',
+                'Video title and description SEO',
+                'Video keyword research',
+                'YouTube thumbnail optimization',
+                'Playlist organization',
+                'YouTube analytics tracking'
+            ]
+        },
+        'ai-seo': {
+            title: 'AI-Powered SEO',
+            tag: 'Artificial Intelligence',
+            desc: 'Leverage artificial intelligence for advanced analytics, content creation, predictive insights, and automated optimization strategies.',
+            image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            icon: 'fas fa-robot',
+            tags: ['AI Analysis', 'Predictive Analytics', 'Automated Reporting', 'Machine Learning', 'Data Insights'],
+            features: [
+                'AI-powered keyword research',
+                'Predictive performance analytics',
+                'Automated content optimization',
+                'Competitor analysis with AI',
+                'Trend prediction and analysis',
+                'Custom AI tool development'
+            ]
+        }
+    };
+    
+    // Tools data
+    const toolsData = [
+        {
+            name: 'SEMrush',
+            desc: 'Comprehensive SEO toolkit for keyword research, competitor analysis, and site auditing',
+            icon: 'fas fa-chart-bar'
+        },
+        {
+            name: 'Ahrefs',
+            desc: 'Backlink analysis, keyword research, and competitor tracking platform',
+            icon: 'fas fa-link'
+        },
+        {
+            name: 'Google Analytics',
+            desc: 'Website traffic analysis and user behavior tracking',
+            icon: 'fab fa-google'
+        },
+        {
+            name: 'Screaming Frog',
+            desc: 'Website crawler for technical SEO analysis and auditing',
+            icon: 'fas fa-spider'
+        },
+        {
+            name: 'Google Search Console',
+            desc: 'Monitor website performance in Google search results',
+            icon: 'fas fa-search'
+        },
+        {
+            name: 'Moz Pro',
+            desc: 'SEO software for tracking rankings and analyzing sites',
+            icon: 'fas fa-chart-line'
+        },
+        {
+            name: 'Surfer SEO',
+            desc: 'Content optimization and on-page SEO analysis tool',
+            icon: 'fas fa-wave-square'
+        },
+        {
+            name: 'Clearscope',
+            desc: 'AI-powered content optimization platform',
+            icon: 'fas fa-brain'
+        }
+    ];
+    
+    // Service Modal functionality
+    const serviceModal = document.getElementById('serviceModal');
+    const modalClose = document.getElementById('modalClose');
+    const modalOverlay = serviceModal.querySelector('.modal-overlay');
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    function openServiceModal(serviceId) {
+        const service = servicesData[serviceId];
+        
+        if (!service) return;
+        
+        // Update modal content
+        document.getElementById('modalServiceImage').src = service.image;
+        document.getElementById('modalServiceImage').alt = service.title;
+        document.getElementById('modalServiceIcon').innerHTML = `<i class="${service.icon}"></i>`;
+        document.getElementById('modalServiceTag').textContent = service.tag;
+        document.getElementById('modalServiceTitle').textContent = service.title;
+        document.getElementById('modalServiceDesc').textContent = service.desc;
+        
+        // Update features
+        const featuresList = document.getElementById('modalFeaturesList');
+        featuresList.innerHTML = '';
+        service.features.forEach(feature => {
+            const featureItem = document.createElement('div');
+            featureItem.className = 'feature-item';
+            featureItem.innerHTML = `
+                <i class="fas fa-check-circle"></i>
+                <span>${feature}</span>
+            `;
+            featuresList.appendChild(featureItem);
+        });
+        
+        // Update tags
+        const serviceTags = document.getElementById('modalServiceTags');
+        serviceTags.innerHTML = '';
+        service.tags.forEach(tag => {
+            const tagElement = document.createElement('span');
+            tagElement.className = 'tag';
+            tagElement.textContent = tag;
+            serviceTags.appendChild(tagElement);
+        });
+        
+        // Show modal
+        serviceModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
     }
     
-    // 8. Image Loading with Fallback
-    const images = document.querySelectorAll('.service-image img');
-    images.forEach(img => {
-        // Add error handling
-        img.addEventListener('error', function() {
-            console.log('Image failed to load:', this.src);
-            const serviceName = this.alt || 'SEO Service';
-            this.src = `https://via.placeholder.com/1200x400/2563eb/ffffff?text=${encodeURIComponent(serviceName)}`;
+    function closeServiceModal() {
+        serviceModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    
+    // Event listeners for opening service modal
+    serviceCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            const serviceId = card.getAttribute('data-service');
+            openServiceModal(serviceId);
         });
-        
-        // Smooth loading effect
-        img.style.opacity = '0';
-        img.style.transition = 'opacity 0.5s ease';
-        img.addEventListener('load', function() {
-            this.style.opacity = '1';
-        });
-        
-        // Force load check
-        if(img.complete) {
-            img.style.opacity = '1';
+    });
+    
+    // Close modal events
+    modalClose.addEventListener('click', closeServiceModal);
+    modalOverlay.addEventListener('click', closeServiceModal);
+    document.querySelector('.close-modal')?.addEventListener('click', closeServiceModal);
+    
+    // Escape key to close modal
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && serviceModal.style.display === 'flex') {
+            closeServiceModal();
         }
     });
     
-    // 9. Initialize first service as active
-    switchService('local');
+    // Tools Modal functionality
+    const toolsModal = document.getElementById('toolsModal');
+    const toolsBtn = document.getElementById('toolsBtn');
+    const toolsModalClose = document.getElementById('toolsModalClose');
+    const toolsModalOverlay = toolsModal.querySelector('.modal-overlay');
+    const toolsGrid = document.getElementById('toolsGrid');
     
-    // 10. Add hover effects to service images
-    const serviceImages = document.querySelectorAll('.service-image');
-    serviceImages.forEach(container => {
-        const img = container.querySelector('img');
-        if(img) {
-            container.addEventListener('mouseenter', () => {
-                img.style.transform = 'scale(1.05)';
-            });
-            
-            container.addEventListener('mouseleave', () => {
-                img.style.transform = 'scale(1)';
-            });
+    // Populate tools grid
+    if (toolsGrid) {
+        toolsData.forEach(tool => {
+            const toolItem = document.createElement('div');
+            toolItem.className = 'tool-item';
+            toolItem.innerHTML = `
+                <div class="tool-icon">
+                    <i class="${tool.icon}"></i>
+                </div>
+                <h4>${tool.name}</h4>
+                <p>${tool.desc}</p>
+            `;
+            toolsGrid.appendChild(toolItem);
+        });
+    }
+    
+    function openToolsModal() {
+        toolsModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeToolsModal() {
+        toolsModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    
+    if (toolsBtn) {
+        toolsBtn.addEventListener('click', openToolsModal);
+    }
+    if (toolsModalClose) {
+        toolsModalClose.addEventListener('click', closeToolsModal);
+    }
+    if (toolsModalOverlay) {
+        toolsModalOverlay.addEventListener('click', closeToolsModal);
+    }
+    
+    // Parallax effect for hero
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const heroContent = document.querySelector('.hero-content');
+        
+        if (heroContent && window.innerWidth > 768) {
+            heroContent.style.transform = `translateY(${scrolled * 0.05}px)`;
         }
     });
     
-    // 11. Tool Card Animation
-    const toolCards = document.querySelectorAll('.tool-card');
-    toolCards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'all 0.5s ease';
-        
-        setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }, index * 100);
-    });
+    // Initialize
+    setActiveNavLink();
     
-    console.log('SEO Services functionality initialized successfully');
+    console.log('SEO Services website initialized successfully!');
 });

@@ -1,408 +1,348 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Digital Marketing Services | Soheera Sibghat</title>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing | Professional Digital Solutions</title>
+    <link rel="stylesheet" href="../page-css/paid.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="../page-css/digital.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
-
-<body class="theme-light">
-
-    <!-- NAVBAR -->
+<body>
+    <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-left">
-                <h2 class="brand">Digital <span>Marketing</span></h2>
-            </div>
-
-            <div class="nav-right">
-                <!-- Digital Marketing Tools Button -->
-                <button class="tools-btn" id="toolsBtn">
-                    <i class="fas fa-tools"></i> Marketing Tools
-                </button>
-                
-                <button class="theme-toggle" id="themeToggle">
-                    <i class="fas fa-moon" id="themeIcon"></i>
-                </button>
-                <a href="../index.html" class="home-btn">
-                    <i class="fas fa-home"></i> Home
+        <div class="container">
+            <div class="nav-content">
+                <!-- Logo on Left -->
+                <a href="#" class="logo">
+                    <span class="logo-text">Digital Marketing</span>
+                    <span class="logo-dot"></span>
                 </a>
+                
+                <!-- Right Side Icons -->
+                <div class="nav-right">
+                    <button class="nav-icon theme-toggle" id="themeToggle" title="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                        <span class="tooltip">Dark/Light Mode</span>
+                    </button>
+                    <button class="nav-icon tools-btn" id="toolsBtn" title="Our Marketing Tools">
+                        <i class="fas fa-tools"></i>
+                        <span class="tooltip">Our Tools</span>
+                    </button>
+                    <a href="../index.html" class="cta-btn">
+                        <span>Home</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <button class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="hero-section">
-        <div class="hero-bg"></div>
-        <div class="hero-container">
+    <!-- Hero Section with Animated Text -->
+    <section class="hero">
+        <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Modern <span>Digital Marketing</span></h1>
-                <p class="hero-subtitle">Boost your brand visibility and drive growth with our comprehensive digital marketing solutions</p>
+                <div class="hero-tag">Premium Digital Marketing Services</div>
+                <h1 class="hero-title">Transform Your <span class="highlight typed-text"></span></h1>
+                <p class="hero-desc">Professional digital marketing solutions designed to increase brand awareness, drive engagement, and accelerate business growth in the digital world.</p>
                 
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">300+</span>
-                        <span class="stat-label">Campaigns</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">95%</span>
-                        <span class="stat-label">ROI Increase</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">Brands</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CATEGORY NAVIGATION -->
-    <section class="category-section">
-        <div class="container">
-            <div class="category-header">
-                <h2>Choose <span>Service</span> Category</h2>
-                <p>Select a category to view details</p>
-            </div>
-            
-            <div class="category-selector">
-                <div class="category-dropdown">
-                    <button class="dropdown-btn" id="dropdownBtn">
-                        <span id="selectedCategory">Social Media Marketing</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="dropdown-menu" id="dropdownMenu">
-                        <button class="menu-item" data-category="smm">
-                            <i class="fas fa-share-alt"></i>
-                            <span>Social Media Marketing</span>
-                        </button>
-                        <button class="menu-item" data-category="email">
-                            <i class="fas fa-envelope"></i>
-                            <span>Email Marketing</span>
-                        </button>
-                        <button class="menu-item" data-category="affiliate">
-                            <i class="fas fa-handshake"></i>
-                            <span>Affiliate Marketing</span>
-                        </button>
-                        <button class="menu-item" data-category="content-marketing">
+                <!-- Animated Stats -->
+                <div class="animated-stats">
+                    <div class="stat-box">
+                        <div class="stat-icon">
                             <i class="fas fa-chart-line"></i>
-                            <span>Content Marketing</span>
-                        </button>
-                        <button class="menu-item" data-category="content-writing">
-                            <i class="fas fa-pen-fancy"></i>
-                            <span>Content Writing</span>
-                        </button>
-                        <button class="menu-item" data-category="copywriting">
-                            <i class="fas fa-copy"></i>
-                            <span>Copywriting</span>
-                        </button>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number" data-count="280">0</span>
+                            <span class="stat-text">Projects Completed</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number" data-count="98">0</span><span>%</span>
+                            <span class="stat-text">Client Satisfaction</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number" data-count="7">0</span><span>+ Years</span>
+                            <span class="stat-text">Industry Experience</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <!-- Animated Background Elements -->
+        <div class="hero-background">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+            <div class="grid-dots"></div>
+        </div>
     </section>
 
-    <!-- SERVICE CONTENT -->
-    <section class="service-section">
+    <!-- Services Section -->
+    <section class="services" id="services">
         <div class="container">
-            <!-- Social Media Marketing -->
-            <div class="service-content active" id="smm">
-                <div class="service-image">
-                    <img src="/images/digital-marketing/social-media-influence-1024x585.jpg" alt="Social Media Marketing">
-                </div>
-                <div class="service-text">
-                    <h2>Social Media Marketing (SMM)</h2>
-                    <p>Transform your social media presence with strategic campaigns across all major platforms. We create engaging content, run targeted ads, build communities, and analyze performance data to maximize your ROI on social media.</p>
-                    <p><strong>Key Features:</strong> Platform strategy, content creation, paid advertising, community management, influencer collaborations, analytics & reporting.</p>
-                </div>
+            <div class="section-header">
+                <div class="section-tag">Our Expertise</div>
+                <h2 class="section-title">Professional Digital Marketing Services</h2>
+                <p class="section-subtitle">Comprehensive digital solutions tailored to maximize your online presence and growth</p>
             </div>
 
-            <!-- Email Marketing -->
-            <div class="service-content hidden" id="email">
-                <div class="service-image">
-                    <img src="/images/digital-marketing/email-marketing.webp" alt="Email Marketing">
+            <div class="services-grid">
+                <!-- Service 1: Social Media SMM -->
+                <div class="service-card" data-service="social-media-smm">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1611605698323-b1e99cfd37ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Social Media SMM">
+                        <div class="service-overlay">
+                            <span class="view-details">View Details</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-text">
-                    <h2>Email Marketing</h2>
-                    <p>Build lasting relationships with your audience through personalized email campaigns. We design automated sequences, newsletters, and promotional emails that convert subscribers into loyal customers.</p>
-                    <p><strong>Key Features:</strong> Email automation, segmentation, A/B testing, responsive design, analytics tracking, list building strategies.</p>
-                </div>
-            </div>
 
-            <!-- Affiliate Marketing -->
-            <div class="service-content hidden" id="affiliate">
-                <div class="service-image">
-                    <img src="/images/digital-marketing/affiliate.webp" alt="Affiliate Marketing">
+                <!-- Service 2: Email Marketing -->
+                <div class="service-card" data-service="email-marketing">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Email Marketing">
+                        <div class="service-overlay">
+                            <span class="view-details">View Details</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-text">
-                    <h2>Affiliate Marketing</h2>
-                    <p>Create profitable partnerships and expand your reach through strategic affiliate programs. We help you build, manage, and scale affiliate networks that drive sales and increase brand awareness.</p>
-                    <p><strong>Key Features:</strong> Program setup, partner recruitment, commission structures, performance tracking, relationship management, compliance monitoring.</p>
-                </div>
-            </div>
 
-            <!-- Content Marketing -->
-            <div class="service-content hidden" id="content-marketing">
-                <div class="service-image">
-                    <img src="/images/digital-marketing/content-marketing.png" alt="Content Marketing">
+                <!-- Service 3: Affiliate Marketing -->
+                <div class="service-card" data-service="affiliate-marketing">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Affiliate Marketing">
+                        <div class="service-overlay">
+                            <span class="view-details">View Details</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-text">
-                    <h2>Content Marketing</h2>
-                    <p>Tell compelling stories that resonate with your audience and drive business growth. Our content marketing strategies include blog posts, videos, infographics, and podcasts that establish thought leadership.</p>
-                    <p><strong>Key Features:</strong> Content strategy, editorial calendar, multimedia content, distribution planning, lead generation, performance measurement.</p>
-                </div>
-            </div>
 
-            <!-- Content Writing -->
-            <div class="service-content hidden" id="content-writing">
-                <div class="service-image">
-                    <img src="/images/digital-marketing/contenttt.webp" alt="Content Writing">
+                <!-- Service 4: Content Marketing -->
+                <div class="service-card" data-service="content-marketing">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Content Marketing">
+                        <div class="service-overlay">
+                            <span class="view-details">View Details</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-text">
-                    <h2>Content Writing</h2>
-                    <p>Create engaging, SEO-optimized content that informs, educates, and converts. Our professional writers craft compelling articles, blog posts, whitepapers, and case studies tailored to your target audience.</p>
-                    <p><strong>Key Features:</strong> SEO writing, blog articles, whitepapers, case studies, product descriptions, thought leadership pieces.</p>
-                </div>
-            </div>
 
-            <!-- Copywriting -->
-            <div class="service-content hidden" id="copywriting">
-                <div class="service-image">
-                    <img src="/images/digital-marketing/copywriting.avif" alt="Copywriting">
+                <!-- Service 5: Content Writing -->
+                <div class="service-card" data-service="content-writing">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Content Writing">
+                        <div class="service-overlay">
+                            <span class="view-details">View Details</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-text">
-                    <h2>Copywriting</h2>
-                    <p>Craft persuasive copy that drives action and boosts conversions. From website copy to ad campaigns, our copywriters create compelling messages that resonate with your audience and achieve business objectives.</p>
-                    <p><strong>Key Features:</strong> Sales copy, landing pages, ad campaigns, email sequences, product descriptions, brand messaging.</p>
+
+                <!-- Service 6: Copywriting -->
+                <div class="service-card" data-service="copywriting">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Copywriting">
+                        <div class="service-overlay">
+                            <span class="view-details">View Details</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- DIGITAL MARKETING TOOLS MODAL -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal-container">
-            <div class="modal-header">
-                <h2><i class="fas fa-tools"></i> Digital Marketing Tools We Use</h2>
-                <button class="modal-close" id="modalClose">
-                    <i class="fas fa-times"></i>
-                </button>
+    <!-- Results Section -->
+    <section class="results" id="results">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Proven Results</div>
+                <h2 class="section-title">Our Success Stories</h2>
+                <p class="section-subtitle">Real results from businesses we've helped grow with digital marketing</p>
             </div>
-            
-            <div class="modal-content">
-                <div class="tools-category">
-                    <h3><i class="fas fa-share-alt"></i> Social Media Management</h3>
-                    <div class="tools-grid">
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fab fa-hootsuite"></i>
-                            </div>
-                            <h4>Hootsuite</h4>
-                            <p>Social media scheduling & monitoring</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fab fa-buffer"></i>
-                            </div>
-                            <h4>Buffer</h4>
-                            <p>Content scheduling & analytics</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-chart-bar"></i>
-                            </div>
-                            <h4>Sprout Social</h4>
-                            <p>Social listening & analytics</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <h4>Later</h4>
-                            <p>Visual content scheduling</p>
-                        </div>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-chart-bar"></i>
                     </div>
+                    <div class="result-number" data-count="320">0</div>
+                    <h3 class="result-title">Engagement Growth</h3>
+                    <p class="result-desc">For fashion brand on social media</p>
                 </div>
-                
-                <div class="tools-category">
-                    <h3><i class="fas fa-envelope"></i> Email Marketing</h3>
-                    <div class="tools-grid">
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-mail-bulk"></i>
-                            </div>
-                            <h4>Mailchimp</h4>
-                            <p>Email automation & campaigns</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-envelope-open-text"></i>
-                            </div>
-                            <h4>ConvertKit</h4>
-                            <p>Email sequences for creators</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-bolt"></i>
-                            </div>
-                            <h4>ActiveCampaign</h4>
-                            <p>Marketing automation & CRM</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-chart-pie"></i>
-                            </div>
-                            <h4>HubSpot</h4>
-                            <p>All-in-one marketing platform</p>
-                        </div>
+
+                <div class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-trophy"></i>
                     </div>
+                    <div class="result-number">45<span>%</span></div>
+                    <h3 class="result-title">Open Rate Increase</h3>
+                    <p class="result-desc">For email marketing campaigns</p>
                 </div>
-                
-                <div class="tools-category">
-                    <h3><i class="fas fa-chart-line"></i> Analytics & SEO</h3>
-                    <div class="tools-grid">
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fab fa-google"></i>
-                            </div>
-                            <h4>Google Analytics</h4>
-                            <p>Website traffic analysis</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-search"></i>
-                            </div>
-                            <h4>SEMrush</h4>
-                            <p>SEO & competitor analysis</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <h4>Ahrefs</h4>
-                            <p>Backlink analysis & SEO</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-tachometer-alt"></i>
-                            </div>
-                            <h4>Moz Pro</h4>
-                            <p>SEO optimization tools</p>
-                        </div>
+
+                <div class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-bullseye"></i>
                     </div>
+                    <div class="result-number" data-count="280">0</div>
+                    <h3 class="result-title">Affiliate Sales</h3>
+                    <p class="result-desc">Generated in first 3 months</p>
                 </div>
-                
-                <div class="tools-category">
-                    <h3><i class="fas fa-pen-fancy"></i> Content Creation</h3>
-                    <div class="tools-grid">
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-spell-check"></i>
-                            </div>
-                            <h4>Grammarly</h4>
-                            <p>Writing assistant & grammar check</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-heading"></i>
-                            </div>
-                            <h4>Canva</h4>
-                            <p>Graphic design & templates</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-film"></i>
-                            </div>
-                            <h4>Adobe Creative Cloud</h4>
-                            <p>Professional design tools</p>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <h4>Jasper AI</h4>
-                            <p>AI content generation</p>
-                        </div>
+
+                <div class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-handshake"></i>
                     </div>
+                    <div class="result-number" data-count="95">0</div>
+                    <h3 class="result-title">Client Retention</h3>
+                    <p class="result-desc">Long-term digital partnerships</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="grax_tm_section">
+        <div class="grax_tm_copyright">
+            <div class="my_wave">
+                <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <defs></defs>
+                    <path id="wave_img" data-color="#fff"
+                        d="M 0 185.609 C 317.16666666666663 118.136 317.16666666666663 118.136 634.3333333333333 151.87 C 951.4999999999999 185.609 951.4999999999999 185.609 1268.6666666666665 116.402 C 1585.833333333333 47.195 1585.833333333333 47.195 1903 131.925 L 1903 507 L 0 507 Z"
+                        fill="#fff"></path>
+                </svg>
+            </div>
             
-            <div class="modal-footer">
-                <p>We use these industry-leading tools to create effective digital marketing strategies and deliver measurable results.</p>
+            <div class="container">
+                <div class="copyright_inner">
+                    <!-- Left: Logo -->
+                    <div class="logo wow fadeInLeft" data-wow-duration="1s">
+                        <span class="footer-logo">Zainab Samnan</span>
+                    </div>
+                    
+                    <!-- Center: Navigation Menu -->
+                    <div class="footer-nav-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+                        <ul class="footer-nav-menu">
+                            <li style="--i:#e54b4b;--j:#ff7b7b" class="footer-nav-item">
+                                <a href="#home" class="footer-nav-link">
+                                    <span class="icon">
+                                        <ion-icon name="home-outline"></ion-icon>
+                                    </span>
+                                    <span class="title">Home</span>
+                                </a>
+                            </li>
+                            <li style="--i:#56CCF2;--j:#2F80ED" class="footer-nav-item">
+                                <a href="#about" class="footer-nav-link">
+                                    <span class="icon">
+                                        <ion-icon name="person-outline"></ion-icon>
+                                    </span>
+                                    <span class="title">About</span>
+                                </a>
+                            </li>
+                            <li style="--i:#FF9966;--j:#FF5E62" class="footer-nav-item">
+                                <a href="#portfolio" class="footer-nav-link">
+                                    <span class="icon">
+                                        <ion-icon name="briefcase-outline"></ion-icon>
+                                    </span>
+                                    <span class="title">Portfolio</span>
+                                </a>
+                            </li>
+                            <li style="--i:#80FF72;--j:#7EE8FA" class="footer-nav-item">
+                                <a href="#contact" class="footer-nav-link">
+                                    <span class="icon">
+                                        <ion-icon name="mail-outline"></ion-icon>
+                                    </span>
+                                    <span class="title">Contact</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Right: Copyright Text -->
+                    <div class="copy wow fadeInRight" data-wow-duration="1s" data-wow-delay=".4s">
+                        <p>&copy; Copyright 2026 by Zainab Samnan</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <!-- COPYRIGHT SECTION -->
-            <div class="copyright_inner">
-                <!-- Left: Logo -->
-                <div class="logo">
-                    <span class="footer-logo">Soheera</span>
+    <!-- Service Modal -->
+    <div class="service-modal" id="serviceModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-content">
+                <div class="modal-image">
+                    <img id="modalServiceImage" src="" alt="Service Image">
                 </div>
                 
-                <!-- Center: Navigation Menu -->
-                <div class="footer-nav-center">
-                    <ul class="footer-nav-menu">
-                        <li style="--i:#e54b4b;--j:#ff7b7b" class="footer-nav-item">
-                            <a href="../index.html" class="footer-nav-link">
-                                <span class="icon">
-                                    <ion-icon name="home-outline"></ion-icon>
-                                </span>
-                                <span class="title">Home</span>
-                            </a>
-                        </li>
-                        <li style="--i:#56CCF2;--j:#2F80ED" class="footer-nav-item">
-                            <a href="../index.html#about" class="footer-nav-link">
-                                <span class="icon">
-                                    <ion-icon name="person-outline"></ion-icon>
-                                </span>
-                                <span class="title">About</span>
-                            </a>
-                        </li>
-                        <li style="--i:#FF9966;--j:#FF5E62" class="footer-nav-item">
-                            <a href="../index.html#portfolio" class="footer-nav-link">
-                                <span class="icon">
-                                    <ion-icon name="briefcase-outline"></ion-icon>
-                                </span>
-                                <span class="title">Portfolio</span>
-                            </a>
-                        </li>
-                        <li style="--i:#80FF72;--j:#7EE8FA" class="footer-nav-item">
-                            <a href="../index.html#contact" class="footer-nav-link">
-                                <span class="icon">
-                                    <ion-icon name="mail-outline"></ion-icon>
-                                </span>
-                                <span class="title">Contact</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Right: Copyright Text -->
-                <div class="copy">
-                    <p>&copy; Copyright 2026 by Soheera</p>
+                <div class="modal-details">
+                    <div class="modal-header">
+                        <div class="modal-icon" id="modalServiceIcon">
+                            <i class="fas fa-hashtag"></i>
+                        </div>
+                        <div class="modal-title">
+                            <span class="modal-tag" id="modalServiceTag">Social Media SMM</span>
+                            <h2 id="modalServiceTitle">Social Media Marketing</h2>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <p id="modalServiceDesc">Comprehensive social media strategy to build brand presence.</p>
+                        
+                        <div class="modal-features">
+                            <h3>What's Included</h3>
+                            <div class="features-grid" id="modalFeaturesList"></div>
+                        </div>
+                        
+                        <div class="modal-tags" id="modalServiceTags"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
 
-    <!-- JavaScript -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Tools Modal -->
+    <div class="tools-modal" id="toolsModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <button class="modal-close" id="toolsModalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-header">
+                <div class="modal-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h2>Our Digital Marketing Tools</h2>
+                <p>Professional tools we use to deliver exceptional digital results</p>
+            </div>
+            
+            <div class="tools-grid" id="toolsGrid"></div>
+        </div>
+    </div>
+    
+    <!-- JavaScript file -->
     <script src="../js/digital.js"></script>
 </body>
 </html>
