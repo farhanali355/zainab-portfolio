@@ -399,6 +399,82 @@ p {
     opacity: 1;
 }
 
+
+
+
+
+
+/* =========================================== */
+/* VIEW DETAILS BUTTON - FIXED FOR LIGHT MODE */
+/* =========================================== */
+
+/* View Details Button in Images Grid */
+.image-card .view-details {
+    color: #ffffff !important; /* Always white text */
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--accent-color);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    transform: translateY(20px);
+    opacity: 0;
+    border: none;
+    text-decoration: none;
+}
+
+/* Light mode specific styling */
+:root {
+    .image-card .view-details {
+        background: #000000; /* Black background in light mode */
+        color: #ffffff !important;
+    }
+}
+
+/* Dark mode specific styling */
+.dark-mode {
+    .image-card .view-details {
+        background: #ffffff; /* White background in dark mode */
+        color: #000000 !important;
+    }
+}
+
+/* Hover effects - light mode */
+:root {
+    .image-card:hover .view-details {
+        background: #333333; /* Darker black on hover */
+        color: #ffffff !important;
+    }
+}
+
+/* Hover effects - dark mode */
+.dark-mode {
+    .image-card:hover .view-details {
+        background: #f0f0f0; /* Light gray on hover */
+        color: #000000 !important;
+    }
+}
+
+.image-card:hover .view-details {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.view-details:hover {
+    transform: translateY(0) scale(1.05) !important;
+}
+
+
+
+
+
+
+
+
 .view-details:hover {
     transform: translateY(0) scale(1.05) !important;
     background: var(--accent-dark);
