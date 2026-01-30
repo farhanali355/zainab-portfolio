@@ -339,6 +339,44 @@ p {
   overflow: hidden;
 }
 
+
+
+
+
+
+/* .hero {
+  padding: 180px 0 100px;
+  background: var(--secondary-bg);
+  position: relative;
+  overflow: hidden;
+  
+ 
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url('/images/digital-marketing/affiliate.webp');
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .hero-content {
   max-width: 800px;
   text-align: center;

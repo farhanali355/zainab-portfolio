@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Local SEO',
             tag: 'Local Optimization',
             desc: 'Dominate local search results with optimized Google Business profiles, local citations, and location-based strategies that drive customers to your physical locations.',
-            image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            image: '/images/seo/image-1.jpg',
             icon: 'fas fa-search-location',
             tags: ['Google My Business', 'Local Citations', 'Review Management', 'NAP Consistency', 'Local Keywords'],
             features: [
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Technical SEO',
             tag: 'Technical Optimization',
             desc: 'Optimize website infrastructure for better crawling, indexing, and overall technical health. Improve site speed, mobile responsiveness, and technical foundation.',
-            image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            image: '/images/seo/image-2.jpg',
             icon: 'fas fa-cogs',
             tags: ['Site Speed', 'Mobile Optimization', 'Structured Data', 'Crawlability', 'Indexing'],
             features: [
@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'E-commerce SEO',
             tag: 'Online Store Optimization',
             desc: 'Drive qualified traffic to your online store and increase sales through strategic product page optimization, category structure improvements, and conversion optimization.',
-            image: 'https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            image: '/images/seo/image-3.jpg',
             icon: 'fas fa-shopping-cart',
             tags: ['Product SEO', 'Category Pages', 'Conversion Rate', 'Shopify', 'WooCommerce'],
             features: [
@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Content Strategy',
             tag: 'Content Marketing',
             desc: 'Create and optimize content that ranks, engages, and converts your target audience through comprehensive keyword research, content planning, and optimization.',
-            image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            image: '/images/seo/image-4.jpg',
             icon: 'fas fa-chart-line',
             tags: ['Keyword Research', 'Content Creation', 'On-Page SEO', 'Blog Strategy', 'Content Planning'],
             features: [
@@ -300,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'YouTube SEO',
             tag: 'Video Optimization',
             desc: 'Maximize video visibility and grow your channel through optimized video titles, descriptions, tags, and comprehensive content strategy for YouTube.',
-            image: 'https://images.unsplash.com/photo-1611605698323-b1e99cfd37ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            image: '/images/seo/image-5.jpg',
             icon: 'fab fa-youtube',
             tags: ['Video Optimization', 'Channel Growth', 'Content Planning', 'YouTube Analytics', 'Thumbnail Design'],
             features: [
@@ -316,7 +316,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'AI-Powered SEO',
             tag: 'Artificial Intelligence',
             desc: 'Leverage artificial intelligence for advanced analytics, content creation, predictive insights, and automated optimization strategies.',
-            image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            image: '/images/seo/image-6.jpg',
             icon: 'fas fa-robot',
             tags: ['AI Analysis', 'Predictive Analytics', 'Automated Reporting', 'Machine Learning', 'Data Insights'],
             features: [
