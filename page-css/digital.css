@@ -582,7 +582,7 @@ p {
 .view-details:hover {
   transform: translateY(0) scale(1.05) !important;
   background: var(--accent-dark);
-  color: rgb(78, 29, 29) !important;
+  color: rgb(0, 0, 0) !important;
 }
 
 /* Results Section */
