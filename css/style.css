@@ -2127,7 +2127,7 @@ body.dark .grax_tm_settings .cursor li .svg,
 	bottom: 0px;
 	left: 0px;
 	right: 0px;  
-    background-image: url(..//img/patterns/light-honeycomb.png);
+    background-image: url(..//img/portfolio/zainab-img.jpg);
     background-repeat: repeat;
     opacity: .4; 
     z-index: 2;
@@ -2379,7 +2379,7 @@ body.dark .grax_tm_settings .cursor li .svg,
 .grax_tm_hero .bg .image {
     width: 100%;
     height: 100vh; /* 50% se 100vh karein */
-    background-image: url('../img/portfolio/ss-1.png') !important;
+    background-image: url('../img/portfolio/zainab-img.jpg') !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
